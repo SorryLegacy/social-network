@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Новая запись{% endblock %}
+{% block content %}
+{% load user_filters %}
+
+    <h1>New post</h1>
+    <form method="POST" class="post-form">{% csrf_token %}
+
+        text:{{ form.text }}<br>
+        group:{{ form.group }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+
+{% endblock %}
